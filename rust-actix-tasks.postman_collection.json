@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "rust-actix-tasks",
+    "_postman_id": "d3e3af83-2ec0-4b1b-9bb5-000000000001",
+    "description": "Postman collection for the Rust Actix Tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Tasks",
+      "request": {
+        "method": "GET",
+        "url": "{{base}}/api/tasks"
+      }
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"New Task\"}"
+        },
+        "url": "{{base}}/api/tasks"
+      }
+    },
+    {
+      "name": "Get Task",
+      "request": {
+        "method": "GET",
+        "url": "{{base}}/api/tasks/1"
+      }
+    },
+    {
+      "name": "Update Task",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"completed\": true}"
+        },
+        "url": "{{base}}/api/tasks/1"
+      }
+    },
+    {
+      "name": "Delete Task",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base}}/api/tasks/1"
+      }
+    },
+    {
+      "name": "Login (JWT)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"gautam\",\"password\":\"pass\"}"
+        },
+        "url": "{{base}}/api/login"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
